@@ -17,6 +17,8 @@ import { MatNativeDateModule } from '@angular/material';
 // Navigation
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackbarComponent } from '../components/snackbar/snackbar.component';
 
 const modules: any[] = [
   LayoutModule,
@@ -32,11 +34,14 @@ const modules: any[] = [
   MatNativeDateModule,
 
   MatButtonModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSnackBarModule
 ];
 
 @NgModule({
   imports: [ ...modules ],
+  entryComponents: [SnackbarComponent],
+  declarations: [SnackbarComponent],
   exports: [ ...modules ]
 })
 export class AngularMaterialModule {}

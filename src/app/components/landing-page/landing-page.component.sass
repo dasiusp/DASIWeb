@@ -1,1 +1,41 @@
-.container-body { height: 100vh; margin-top: 84px; }
+.container-body
+    width: 100vw;
+    
+.about, .events, .info, .intercomp, .pre-footer
+    position: relative;
+    width: 100vw;
+    height: 200vh;
+    z-index: 2;
+    background: white;
+
+.pre-footer
+    height: 70vh;
+
+.events
+    height: 350vh;
+
+.intercomp
+    height: 325vh;
+
+.events, .intercomp
+    z-index: -1;
+    
+.parallax-wrapper
+    position: fixed;
+    top: 0px; 
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
+
+.events .parallax-wrapper
+    background-image: url("photo5127429363984345089.png");
+    transform: scale(1.2);
+    background-position-y: -10%;
+
+.intercomp .parallax-wrapper
+    background-image: url("intercomp.jpg");
+    transform: scale(1.3);
+    background-position-y: 70%;
+
