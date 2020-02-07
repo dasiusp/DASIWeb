@@ -14,7 +14,10 @@ export class LandingPageComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (window.pageYOffset > 3500) {
+    const offsetY = window.pageYOffset;
+    document.getElementById('about-title').style.marginLeft = (47.5 + offsetY * 0.025).toString() + 'vw';
+    document.getElementById('events-title').style.marginLeft = (62.5 + offsetY * -0.03).toString() + 'vw';
+    if (window.pageYOffset > 3800) {
       document.getElementById('intercomp-parallax-wrapper').style.marginTop = '-80vh';
     } else {
       document.getElementById('intercomp-parallax-wrapper').style.marginTop = '150vh';
