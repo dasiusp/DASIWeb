@@ -1,0 +1,29 @@
+@import '../app/components/header/header.component'
+  
+.fade-container
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+.sidebar-button
+  align-self: flex-end;
+  position: relative;
+  right: 0;
+
+::ng-deep .mat-drawer-inner-container
+  display: flex;
+  flex-direction: column;
+  width: 55vw !important;
+
+@media screen and ( max-width: 700px )
+  ::ng-deep .grifo-logo
+    left: 0 !important;
+    top: 25px !important;
+    align-self: center;
+    width: 30vw;
+    height: 30vw;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2) !important;
+  

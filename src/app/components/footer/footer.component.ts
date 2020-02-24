@@ -14,6 +14,8 @@ export class FooterComponent implements OnInit {
   openSnackBar() {
     this.snackBar.openFromComponent(SnackbarComponent, {
       duration: 4300,
+      verticalPosition: 'top',
+      panelClass: ['light-snackbar']
     });
   }
 

@@ -1,11 +1,11 @@
 <div class="container-body">
     <section class="about">
-        <div class="video">
+        <!-- <div class="video">
             <span style="top: 40vh;
             margin-left: 48vw;
             position: relative;
             color: white;">VIDEO AQUI</span>
-        </div>
+        </div> -->
         <div class="sub-header">
         </div>
         <span id="about-title" class="title">Sobre</span>
@@ -16,27 +16,71 @@
         </div>
     </section>
     <section class="events">
-        <div id="events-parallax" appParallax [ratio]="-0.02" class="parallax-wrapper"></div>
-        <div class="sub-header">
-        </div>
+        <!-- <div id="events-parallax" appParallax [ratio]="-0.02" class="parallax-wrapper"></div> -->
+        <div class="sub-header"></div>
         <span id="events-title" class="title">Eventos</span>
         <div class="content">
             <p class="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut commodo elit, eu sagittis magna. Suspendisse sollicitudin, magna sed pretium dignissim, dolor augue varius arcu, ac posuere mauris nulla sit amet nulla. Proin neque mauris, porttitor eu convallis ac, consequat quis metus. Fusce hendrerit condimentum suscipit. Maecenas ligula sem, maximus vel dui ac, auctor mattis eros. Phasellus id ante porta, finibus nunc vel, pretium lacus. Vestibulum nec laoreet risus. Donec aliquam gravida odio, quis hendrerit lectus fermentum et.
             </p>
+            <div class="wrapper">
+                <iframe id="ytplayer" type="text/html"
+                src="http://www.youtube.com/embed/pRMZyrHZPy8"
+                frameborder="0"
+                allowfullscreen="true">
+            </iframe>
+            </div>
         </div>
     </section>
-    <section class="info">
-        <!-- <div class="parallax-wrapper"></div> -->
-
+    <!-- <section class="info">
+        <div class="cards">
+            <div class="card">
+                <img class="icon" width="30%" src="../../../assets/icons/Notebook.svg"/>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut commodo elit, eu sagittis magna. Suspendisse sollicitudin, magna sed pretium dignissim, dolor augue varius arcu, ac posuere mauris nulla sit amet nulla.
+                </p>
+            </div>
+            <div class="card">
+                <img class="icon" width="30%" src="../../../assets/icons/Football.svg"/>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut commodo elit, eu sagittis magna. Suspendisse sollicitudin, magna sed pretium dignissim, dolor augue varius arcu, ac posuere mauris nulla sit amet nulla.
+                </p>
+            </div>
+            <div class="card">
+                <img class="icon" width="30%" src="../../../assets/icons/Block_Hub_Network.svg"/>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut commodo elit, eu sagittis magna. Suspendisse sollicitudin, magna sed pretium dignissim, dolor augue varius arcu, ac posuere mauris nulla sit amet nulla.
+                </p>
+            </div>
+        </div>
+        <span class=test>
+                Comentários de pessoas/ex-membros acerca do dasi
+        </span>
+        <carousel #carousel="carousel" [showControls]="false">
+            <ng-container *ngFor="let item of items;">
+                <ng-container *carouselItem>
+                    <div class="item">{{item.title}}</div>
+                </ng-container>
+            </ng-container>
+        </carousel>
+              
     </section>
     <section class="intercomp">
-        <div id="intercomp-parallax-wrapper" appParallax [ratio]="-0.1" class="parallax-wrapper"></div>
-        <!-- <div class="parallax-wrapper"></div> -->
-
+        <div id="intercomp-parallax-wrapper" appParallax [ratio]="-0.02" class="parallax-wrapper"></div>
+        <div class="parallax-wrapper"></div>
+        <div class="sub-header"></div>
+        <span id="intercomp-title" class="title">Intercomp</span>
+        <div class="content">
+            <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut commodo elit, eu sagittis magna. Suspendisse sollicitudin, magna sed pretium dignissim, dolor augue varius arcu, ac posuere mauris nulla sit amet nulla. Proin neque mauris, porttitor eu convallis ac, consequat quis metus. Fusce hendrerit condimentum suscipit. Maecenas ligula sem, maximus vel dui ac, auctor mattis eros. Phasellus id ante porta, finibus nunc vel, pretium lacus. Vestibulum nec laoreet risus. Donec aliquam gravida odio, quis hendrerit lectus fermentum et.
+            </p>
+            <span class=test>
+                After movie + explicação detalhada
+            </span>
+        </div>
     </section>
     <section class="pre-footer">
-        <!-- <div class="parallax-wrapper"></div> -->
+        <div class="parallax-wrapper"></div>
 
-    </section>
+    </section> -->
 </div>

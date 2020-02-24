@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     templateUrl: './snackbar.component.html',
     styles: [`
       .text {
-        color: #db6d6d;
+        color: #e34040;
       }
     `],
 })
