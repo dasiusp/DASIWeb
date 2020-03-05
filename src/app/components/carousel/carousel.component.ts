@@ -1,72 +1,70 @@
-import { Component, Directive, ContentChildren, QueryList, AfterViewInit, ViewChildren, ElementRef, ViewChild, Input } from '@angular/core';
-import { CarouselItemDirective } from 'src/app/directives/carousel-item.directive';
-import { AnimationPlayer, AnimationBuilder, AnimationFactory, animate, style } from '@angular/animations';
-
-@Directive({
-  selector: '.carousel-item'
-})
-export class CarouselItemElement {
-}
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'carousel',
+  selector: 'app-carousel',
   exportAs: 'carousel',
-  template: './carousel.component.html',
-  styles: ['./carousel.component.sass']
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.sass']
 })
-export class CarouselComponent implements AfterViewInit {
+export class CarouselComponent implements OnInit {
 
-  carouselWrapperStyle = {};
-  private player: AnimationPlayer;
-  private itemWidth: number;
-  private currentSlide = 0;
+  carousel;
+  container;
+  prevBtn;
+  nextBtn;
+  pagination;
+  bullets;
+  totalItems;
+  percent;
+  currentIndex = 0;
 
-  @ContentChildren(CarouselItemDirective) items: QueryList<CarouselItemDirective>;
-  @ViewChildren(CarouselItemElement, { read: ElementRef }) private itemsElements: QueryList<ElementRef>;
-  @ViewChild('carousel', {static: false}) private carousel: ElementRef;
-  @Input() timing = '250ms ease-in';
-  @Input() showControls = true;
+  @Input() width = 0;
+  @Input() height = 0;
 
-  constructor( private builder: AnimationBuilder ) {
+  constructor() {
+  }
+
+  slideTo(index) {
+    index = index < 0 ? this.totalItems - 1 : index >= this.totalItems ? 0 : index;
+    this.container.style.transform = this.container.style.transform = 'translate(-' + (index * this.percent) + '%, 0)';
+    this.bullets[this.currentIndex].classList.remove('active-bullet');
+    this.bullets[index].classList.add('active-bullet');
+    this.currentIndex = index;
   }
 
   next() {
-    if ( this.currentSlide + 1 === this.items.length ) {
-      return;
-    }
-
-    this.currentSlide = (this.currentSlide + 1) % this.items.length;
-
-    const offset = this.currentSlide * this.itemWidth;
-
-    const myAnimation: AnimationFactory = this.builder.build([
-       animate(this.timing, style({ transform: `translateX(-${offset}px)` }))
-    ]);
-
-    this.player = myAnimation.create(this.carousel.nativeElement);
-    this.player.play();
+    this.slideTo(this.currentIndex + 1);
   }
 
   prev() {
-    if ( this.currentSlide === 0 ) {
-      return;
+    this.slideTo(this.currentIndex - 1);
+  }
+
+  ngOnInit() {
+    this.carousel = document.querySelector('.carousel');
+    this.container = this.carousel.querySelector('.carousel-container') as HTMLElement;
+    this.prevBtn = this.carousel.querySelector('.carousel-prev');
+    this.nextBtn = this.carousel.querySelector('.carousel-next');
+    this.pagination = this.carousel.querySelector('.carousel-pagination');
+    this.bullets = [].slice.call(this.carousel.querySelectorAll('.carousel-bullet'));
+    this.totalItems = this.container.querySelectorAll('.carousel-item').length;
+    this.percent = (100 / (this.totalItems + 1));
+    this.currentIndex = 0;
+
+    this.bullets[this.currentIndex].classList.add('active-bullet');
+
+    this.pagination.addEventListener('click', function(e) {
+        const index = this.bullets.indexOf(e.target);
+        if (index !== -1 && index !== this.currentIndex) {
+          this.slideTo(index);
+        }
+    }, false);
+
+    if (this.width !== 0) {
+      document.getElementById('carousel').style.width = this.width + 'vw';
     }
-
-    this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
-    const offset = this.currentSlide * this.itemWidth;
-
-    const myAnimation : AnimationFactory = this.builder.build([
-      animate(this.timing, style({ transform: `translateX(-${offset}px)` }))
-    ]);
-
-    this.player = myAnimation.create(this.carousel.nativeElement);
-    this.player.play();
-   }
-
-  ngAfterViewInit() {
-    this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-    this.carouselWrapperStyle = {
-      width: `${this.itemWidth}px`
-    };
+    if (this.height !== 0) {
+      document.getElementById('content').style.height = this.height + 'vh';
+    }
   }
 }

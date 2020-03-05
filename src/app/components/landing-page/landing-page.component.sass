@@ -10,7 +10,7 @@ p
     position: relative;
     margin-top: 84px;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 
 section
     display: flex;
@@ -36,117 +36,66 @@ section
     transition: all 0.35s ease-out 0s;
 
 .text
-    font: 350 2rem Roboto;
-    line-height: 3.5rem;
+    font: 350 1.8rem Roboto;
+    line-height: 2.5rem;
     color: black;
+    text-align: center;
 
 .content
     display: flex;
     flex-direction: column;
 
-.about .title
-    left: 75vw;
-
 .events .sub-header
     align-self: flex-start;
     margin-left: -50px;
+    background: map-get($md-nd-dasi-pallete, 400);
+
+.intercomp
+    padding-bottom: 0;
+
+.intercomp .sub-header
+    background: map-get($md-nd-dasi-pallete, 400);
+
+.intercomp .title
+    color: white;
 
 .events .title
-    left: 70vw;
+    left: 60vw;
 
 .wrapper
     align-self: center;
     position: relative;
-    padding: 50px 20px;
-    height: 400px;
-    width: 70vw;
+    padding: 30px 60px;
+
+.yt.wrapper
+    height: 300px;
+    width: 50%;
+    padding-bottom: 80px;
 
 iframe
     width: 100%;
     height: 100%;
-    
-// .about, .events, .info, .intercomp, .pre-footer
-//     position: relative;
-//     width: 100%;
-//     height: 200vh;
-//     z-index: 2;
-//     background: white;
-//     padding: 25px;
-//     flex-wrap: wrap;
 
-// .about
-//     height: 285vh;
-//     padding: 0;
+.parallax-wrapper
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.5) grayscale(1);
+    z-index: -1;
+    transition: all 0.2s ease-out;
 
-// .events
-//     height: 350vh;
+.events .parallax-wrapper
+    background-image: url("photo5127429363984345089.png");
+    height: calc(100% - 50px);
+    background-size: 170%;
 
-// .intercomp
-//     height: 325vh;
-
-// .pre-footer
-//     height: 70vh;
-
-// .info
-//     display: inline-flex;
-//     justify-content: center;
-
-// .events, .intercomp
-//     z-index: -1;
-    
-// .parallax-wrapper
-//     position: fixed;
-//     top: 0px; 
-//     left: 0px;
-//     width: 100%;
-//     height: 100vh;
-//     background-size: cover;
-//     z-index: -1;
-//     filter: brightness(0.5) grayscale(1);
-//     transition: all 0.2s ease-out;
-
-// .events .parallax-wrapper
-//     background-image: url("photo5127429363984345089.png");
-//     transform: scale(1.2);
-//     background-position-y: -5%;
-
-// .intercomp .parallax-wrapper
-//     background-image: url("intercomp.jpg");
-//     transform: scale(1.3);
-//     background-position-y: 70%;
-
-// .about .sub-header, .intercomp .sub-header
-//     right: -60vw;
-//     top: 35vh;
-//     transform: skewX(7.5deg);
-//     background: map-get($DASIWeb-primary, 50);
-
-// .events .sub-header
-//     left: -3vw;
-//     top: 17vh;
-//     transform: skewX(-7.5deg);
-//     background: map-get($DASIWeb-primary, A100);
-
-// .events .title
-//     color: white;
-//     top: 22vh;
-
-// .events .content
-//     top: 28vh;
-
-// .intercomp .sub-header
-//     background: map-get($DASIWeb-primary, A100);
-//     top: 17vh;
-
-// .intercomp .content
-//     top: 29.5vh;
-
-// .about .title, .intercomp .title
-//     margin-top: 17.5vh;
-
-// .intercomp .title
-//      color: white;
-//      margin-top: 0vh;
+.intercomp .parallax-wrapper
+    background-image: url("intercomp.jpg");
+    background-size: 150%;
 
 .video
     height: 90vh;
@@ -154,73 +103,110 @@ iframe
     position: relative;
     background: black;
 
-// .events .text, .info .text, .intercomp .text
-//     color: white;
+.events .text, .info .text, .intercomp .text, .events .title
+    color: white;
 
-// .info .text
-//     font-size: 1.25rem;
-//     line-height: 1.6rem;
+.info .text
+    font-size: 1.25rem;
+    line-height: 1.6rem;
 
-// .fade
-//     background: white !important;
-
-// .commentaries
-//     width: 100%;
-//     flex-basis: 100%;
-//     padding: 25px;
-
-// .cards
-//     position: relative;
-//     width: 100%;
-//     display: inline-flex;
-//     flex-wrap: wrap;
+.cards
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
     
-// .card
-//     position: relative;
-//     top: 15vh;
-//     width: 20vw;
-//     height: 60vh;
-//     background: map-get($DASIWeb-accent, 400);
-//     @include mat-elevation(2);
-//     margin: 5vw;
-//     padding: 25px 10px;
-//     text-align: center;
-//     border-radius: 15px;
-//     transition: all 0.35s ease-out 0s;
+.card
+    position: relative;
+    width: 20vw;
+    background: map-get($DASIWeb-accent, 400);
+    @include mat-elevation(2);
+    margin: 0 5vw;
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.35s ease-out 0s;
 
-// .card:hover
-//     top: 13.5vh;
+.card:hover
+    margin-top: -1.5vh;
 
-// .icon
-//     filter: invert(1);
+.icon
+    filter: invert(1);
 
-// .test
-//     position: absolute;
-//     color: blue;
-//     font-weight: 800;
-//     font-size: 20px;
+.comentaries
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    padding: 50px 0;
 
-// .events .test
-//     top: 200vh;
-//     left: 8vw;
+.light-bold
+    font-weight: 400;
 
-// .info .test
-//     top: 160vh;
+.italic
+    font-style: italic;
 
-// .intercomp .test
-//     top: 160vh;
-//     left: 32vw;
+@media screen and ( min-width: 701px )
+    .about .title
+        left: 57vw;
 
 @media screen and ( max-width: 700px )
+    .text
+        font: 350 1.5rem Roboto;
+        line-height: 2.25rem;
+
     .sub-header
         width: 70vw;
     
     .about .title
-        left: 15vw;
+        align-self: center;
 
     .events .title
-        left: 170vw;
+        left: 70vw;
+
+    .intercomp .title
+        left: -191vw;
 
     .wrapper
+        padding: 20px 20px;
+
+    .yt.wrapper
         width: 90vw;
         height: 300px;
+        
+    .events .parallax-wrapper
+        background-size: 750%;
+        background-position-x: -71rem;
+
+    .intercomp .parallax-wrapper
+        background-size: 580% !important;
+
+    .intercomp .parallax-wrapper
+        padding-top: 250%;
+
+    .info .text
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+
+    .card
+        width: 75vw;
+        margin-bottom: 50px;
+
+    .card .text
+        font-size: 1.25rem;
+
+@media screen and ( min-width: 700px ) and ( max-width: 1024px )
+    .events .parallax-wrapper
+        background-size: 300%;
+
+@media screen and ( min-height: 550px ) and ( max-height: 620px )
+    .intercomp .title
+        left: -215vw;
+    
+    .events .title
+        left: 73vw !important;
+
+@media screen and ( min-width: 1024px )
+    .intercomp .parallax-wrapper
+        background-size: 140%;

@@ -13,13 +13,13 @@
     display: flex;
     justify-content: space-around;
     height: auto;
-    padding: 12.5px 0px;
+    padding: 12.5px 10px;
 
 .mat-footer-top
     display: flex;
     justify-content: space-evenly;
     height: auto;
-    padding: 12.5px 0px;
+    padding: 12.5px 10px;
 
 .text
     font-weight: 250;
@@ -32,7 +32,7 @@
 @media screen and ( max-width: 700px )
     .mat-footer-bottom
         flex-direction: column;
-        padding: 22.5px 0px;
+        padding: 22.5px 10px;
 
     .mat-footer-bottom .text
         text-align: center !important;
@@ -45,3 +45,10 @@
 
     .mat-footer-bottom .item
         margin: 10px 0px;
+
+@media screen and ( max-height: 700px )
+    .mat-footer-bottom
+        padding: 22.5px 20px;
+
+    .text
+        font-size: 14px;
