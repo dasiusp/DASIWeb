@@ -1,17 +1,12 @@
 
 @import '~@angular/material/theming';
-@import '../src/assets/variables.scss';
+@import '../src/assets/variables.sass';
 
 @include mat-core();
-
-$DASIWeb-primary: mat-palette($md-st-dasi-pallete);
-$DASIWeb-accent: mat-palette($md-nd-dasi-pallete, A200, A100, A400);
-
-$DASIWeb-warn: mat-palette($md-warn-dasi-pallete);
 
 $DASIWeb-theme: mat-light-theme($DASIWeb-primary, $DASIWeb-accent, $DASIWeb-warn);
 
 @include angular-material-theme($DASIWeb-theme);
 
-html, body { height: 100%; }
+html, body { height: 100%; width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

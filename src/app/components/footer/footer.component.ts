@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
-  ngOnInit() {
+  openSnackBar() {
+    this.snackBar.openFromComponent(SnackbarComponent, {
+      duration: 4300,
+      verticalPosition: 'top',
+      panelClass: ['light-snackbar']
+    });
   }
 
+  ngOnInit() { }
 }
+
