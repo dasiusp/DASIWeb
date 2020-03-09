@@ -30,16 +30,14 @@ export class AppComponent {
   }
 
   myScrollHandler(event) {
-    if (window.innerWidth < 450) {
-      document.getElementById('about-title').style.marginLeft = - event.srcElement.scrollTop / 20 + 'vw';
-      document.getElementById('events-title').style.marginLeft = 5 - (event.srcElement.scrollTop / 20) + 'vw';
-      document.getElementById('intercomp-title').style.marginLeft = - 14 + event.srcElement.scrollTop / 20 + 'vw';
-    } else {
-      document.getElementById('about-title').style.marginLeft = event.srcElement.scrollTop / 30 + 'vw';
-      document.getElementById('events-title').style.marginLeft = - 32 - (event.srcElement.scrollTop / 30) + 'vw';
-      document.getElementById('intercomp-title').style.marginLeft = 188 + event.srcElement.scrollTop / 30 + 'vw';
-    }
+    const scrollHeight = event.srcElement.scrollHeight;
+    const scrollTop = event.srcElement.scrollTop;
+    const scrollPerc = ((scrollHeight - scrollTop - window.outerHeight) / (scrollHeight - window.outerHeight));
+    document.getElementById('about-title').style.marginLeft = 200 - scrollPerc * 200 + 'vw';
+    document.getElementById('events-title').style.marginLeft = (200 * 0.7914) - (scrollPerc * 200) + 'vw';
+    document.getElementById('intercomp-title').style.marginLeft = (200 * 0.23) - (scrollPerc * 200) + 'vw';
     document.getElementById('events-parallax').style.backgroundPositionY = - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
     document.getElementById('intercomp-parallax').style.backgroundPositionY = - 500 - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
+    console.log(scrollPerc);
   }
 }
