@@ -37,7 +37,7 @@ export class AppComponent {
     document.getElementById('events-title').style.marginLeft = (200 * 0.7914) - (scrollPerc * 200) + 'vw';
     document.getElementById('intercomp-title').style.marginLeft = (200 * 0.23) - (scrollPerc * 200) + 'vw';
     document.getElementById('events-parallax').style.backgroundPositionY = - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
-    document.getElementById('intercomp-parallax').style.backgroundPositionY = - 500 - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
-    console.log(scrollPerc);
+    document.getElementById('intercomp-parallax').style.backgroundPositionY =
+    - 500 - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
   }
 }

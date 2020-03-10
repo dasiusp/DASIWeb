@@ -26,14 +26,22 @@ html
 
 .photo
     align-self: center;
-    background: url('../../../assets/images/larissinha.jfif');
     border: map-get($md-nd-dasi-pallete, 50) 2px solid;
     @include mat-elevation(3);
     background-position: center;
     border-radius: 100%;
-    background-size: 100%;
+    background-size: 100% !important;
     width: 130px;
     height: 130px;
+
+.photo.st
+    background: url('../../../assets/images/larissinha.jfif');
+
+.photo.nd
+    background: url('../../../assets/images/pipinha.jfif');
+
+.photo.rd
+    background: url('../../../assets/images/day.jfif');
 
 .comentary
     position: relative;
@@ -52,6 +60,9 @@ html
     font-weight: 500;
     color: darkgray;
     font-style: normal;
+
+.position.sd
+    padding-top: 3px;
 
 /* Carousel */
 
