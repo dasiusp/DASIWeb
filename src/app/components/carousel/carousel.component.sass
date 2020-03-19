@@ -59,6 +59,7 @@ html
 .position
     align-self: center;
     position: relative;
+    text-align: center;
     padding-top: 18px;
     font-weight: 500;
     color: darkgray;
@@ -115,24 +116,15 @@ html
 .carousel-prev
     left: 2%;
     margin-top: -12.5px;
-    padding-right: 3px;
-
-
-.carousel-prev::before
-    content: '\f053';
-    font-family: "FontAwesome";
 
 
 .carousel-next
     right: 2%;
     margin-top: -12.5px;
-    padding-left: 3px;
 
-
-.carousel-next::before
-    content: '\f054';
-    font-family: "FontAwesome";
-
+.carousel-next .icon, .carousel-prev .icon
+    top: 6px;
+    position: relative;
 
 .carousel-prev:hover,
 .carousel-next:hover
