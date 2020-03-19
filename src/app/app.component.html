@@ -4,26 +4,24 @@
             class="grifo-logo"
             src="assets/arts/grifo-logo.png"
             alt="Logo grifo universitário">
-        <!-- <div class="container-buttons"> -->
-            <button 
-                mat-button
-                class="first item"
-                (click)="openSnackBar()">
-                <span class="text">Login</span>
-            </button>
-            <button 
-                mat-button
-                class="item"
-                (click)="openSnackBar()">
-                <span class="text">Setores</span>
-            </button>
-            <button 
-                mat-button
-                class="item"
-                (click)="openSnackBar()">
-                <span class="text">Loja</span>
-            </button>
-        <!-- </div> -->
+        <button 
+            mat-button
+            class="first item"
+            (click)="openSnackBar()">
+            <span class="text">Login</span>
+        </button>
+        <button 
+            mat-button
+            class="item"
+            (click)="openSnackBar()">
+            <span class="text">Setores</span>
+        </button>
+        <button 
+            mat-button
+            class="item"
+            (click)="openSnackBar()">
+            <span class="text">Loja</span>
+        </button>
     </mat-sidenav>
     <mat-sidenav-content (scroll)="myScrollHandler($event)">
         <app-header (toggleSidebar)="sidenav.open()"></app-header>
