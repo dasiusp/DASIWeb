@@ -1,55 +1,55 @@
-@import '~@angular/material/theming';
-@import '../../../assets/variables';
+@import '~@angular/material/theming'
+@import '../../../assets/variables'
     
 .footer-container
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    display: flex
+    flex-direction: column
+    position: relative
+    left: 0
+    bottom: 0
+    width: 100%
 
 .mat-footer-bottom
-    display: flex;
-    justify-content: space-around;
-    height: auto;
-    padding: 12.5px 10px;
+    display: flex
+    justify-content: space-around
+    height: auto
+    padding: 12.5px 10px
 
 .mat-footer-top
-    display: flex;
-    justify-content: space-evenly;
-    height: auto;
-    padding: 12.5px 10px;
+    display: flex
+    justify-content: space-evenly
+    height: auto
+    padding: 12.5px 10px
 
 .text
-    font-weight: 250;
-    font-size: 17px;
-    white-space: break-spaces;
+    font-weight: 250
+    font-size: 17px
+    white-space: break-spaces
 
 .brasao
-    width: 90px;
-    filter: invert(1);
+    width: 90px
+    filter: invert(1)
 
 @media screen and ( max-width: 700px )
     .mat-footer-bottom
-        flex-direction: column;
-        padding: 22.5px 10px;
+        flex-direction: column
+        padding: 22.5px 10px
 
     .mat-footer-bottom .text
-        text-align: center !important;
+        text-align: center !important
     
     .mat-footer-top
-        flex-direction: column;
+        flex-direction: column
 
     .mat-footer-top .item
-        margin: 5px 0px;
+        margin: 5px 0px
 
     .mat-footer-bottom .item
-        margin: 10px 0px;
+        margin: 10px 0px
 
 @media screen and ( max-height: 700px )
     .mat-footer-bottom
-        padding: 22.5px 20px;
+        padding: 22.5px 20px
 
     .text
-        font-size: 14px;
+        font-size: 14px

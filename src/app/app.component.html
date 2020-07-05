@@ -2,7 +2,7 @@
     <mat-sidenav class="sidenav" #sidenav (keydown.escape)="closeSidebar()" disableClose>
         <img 
             class="grifo-logo"
-            src="assets/arts/grifo-logo.png"
+            src="../assets/arts/grifo-logo.png"
             alt="Logo grifo universitário">
         <button 
             mat-button
@@ -23,7 +23,7 @@
             <span class="text">Loja</span>
         </button>
     </mat-sidenav>
-    <mat-sidenav-content (scroll)="myScrollHandler($event)">
+    <mat-sidenav-content appSlideTransition (scroll)="myScrollHandler($event)">
         <app-header (toggleSidebar)="sidenav.open()"></app-header>
         <router-outlet></router-outlet>
         <app-footer></app-footer>

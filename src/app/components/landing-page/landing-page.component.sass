@@ -1,199 +1,233 @@
-@import '~@angular/material/theming';
-@import '../../../assets/variables';
+@import '~@angular/material/theming'
+@import '../../../assets/variables'
 
 p
-    margin-bottom: 0;
+    margin-bottom: 0
 
 .container-body
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 84px;
-    width: 100%;
-    overflow: hidden;
+    display: flex
+    flex-direction: column
+    position: relative
+    margin-top: 84px
+    width: 100%
+    overflow: hidden
 
 section
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 50px 20px;
+    display: flex
+    flex-direction: column
+    position: relative
+    padding: 6rem 20px
+    margin: -5px -10px -10px -5px
 
 .sub-header
-    align-self: flex-end;
-    position: relative;
-    height: 100px;
-    width: 45vw;
-    margin-right: -50px;
-    background: map-get($md-st-dasi-pallete, 50);
-    transform: skewX(25deg);
-    border-radius: 3px;
+    align-self: flex-end
+    position: relative
+    height: 100px
+    width: 45vw
+    margin-right: -50px
+    background: map-get($md-st-dasi-pallete, 50)
+    @include mat-elevation(2)
+    transform: skewX(25deg)
+    border-radius: 3px
 
 .title
-    position: absolute;
-    font: 850 3.5rem Roboto;
-    letter-spacing: 5px;
-    color: black;
-    transition: all 0.35s ease-out 0s;
+    position: absolute
+    font: 700 3.5rem Exo
+    letter-spacing: 4px
+    color: black
+    transition: all 0.35s ease-out 0s
 
-.text
-    font: 350 1.8rem Roboto;
-    line-height: 2.5rem;
-    color: black;
-    text-align: center;
+.about .title
+    margin-left: 70vw
 
-.content
-    display: flex;
-    flex-direction: column;
-
-.events .sub-header
-    align-self: flex-start;
-    margin-left: -50px;
-    background: map-get($md-nd-dasi-pallete, 400);
-
-.intercomp
-    padding-bottom: 0;
-
-.intercomp .sub-header
-    background: map-get($md-nd-dasi-pallete, 400);
+.events .title
+    margin-left: 7vw
 
 .intercomp .title
-    color: white;
+    margin-left: 21.5vw
+
+.text
+    font: 350 1.8rem Roboto
+    line-height: 3rem
+    color: black
+    text-align: center
+
+.content
+    display: flex
+    flex-direction: column
+
+.events .sub-header
+    align-self: flex-start
+    margin-left: -50px
+    background: map-get($md-nd-dasi-pallete, 400)
+
+.intercomp .sub-header
+    background: map-get($md-nd-dasi-pallete, 400)
 
 .wrapper
-    align-self: center;
-    position: relative;
-    padding: 30px 60px;
+    align-self: center
+    position: relative
+    padding: 1.5rem 4rem
+
+.limiter-wrapper
+    overflow: hidden
 
 .yt.wrapper
-    height: 300px;
-    width: 50%;
-    padding-bottom: 80px;
+    height: 25rem
+    width: 50%
+    background: #e7e5ed
+    box-shadow: inset 0px 0px 6px -1px #000000
+    border-radius: 7px
+    margin-top: 2rem
 
 iframe
-    width: 100%;
-    height: 100%;
+    width: 100%
+    height: 100%
+
+.iframe-video-1, .iframe-video-2
+    @include mat-elevation(6)
+    border-radius: 5px
+
+.aux-line-1
+    z-index: -1
+    position: relative
+    top: calc(-100% - 37.5px)
+    left: -10%
 
 .parallax-wrapper
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.5) grayscale(1);
-    z-index: -1;
-    transition: all 0.2s ease-out;
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-position: center
+    background-repeat: no-repeat
+    filter: brightness(0.5) grayscale(1) blur(3px)
+    z-index: -1
+    transition: all 0.2s ease-out
 
 .events .parallax-wrapper
-    background-image: url("photo5127429363984345089.png");
-    height: calc(100% - 50px);
-    background-size: 200%;
+    background-image: url("photo5127429363984345089.png")
+    height: 100%
+    background-size: 200%
+    background-position-y: -7.5rem
+    margin: -5px -10px -10px -5px
 
 .intercomp .parallax-wrapper
-    background-image: url("intercomp.jpg");
-    background-size: 150%;
+    background-image: url("intercomp.jpg")
+    background-size: 150%
 
 .video
-    height: 90vh;
-    width: 100%;
-    position: relative;
-    background: black;
+    height: 90vh
+    width: 100%
+    position: relative
+    background: black
 
-.events .text, .info .text, .intercomp .text, .events .title
-    color: white;
+.events .text, .info .text, .intercomp .text, .events .title, .intercomp .title
+    color: white
 
 .info .text
-    font-size: 1.25rem;
-    line-height: 1.6rem;
+    font-size: 1.25rem
+    line-height: 3.9vh
 
 .cards
-    position: relative;
-    width: 100%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
+    position: relative
+    width: 100%
+    display: inline-flex
+    flex-wrap: wrap
+    padding-bottom: 50px
+    justify-content: center
     
 .card
-    position: relative;
-    width: 20vw;
-    background: map-get($DASIWeb-accent, 400);
-    @include mat-elevation(2);
-    margin: 0 5vw;
-    padding: 25px 10px;
-    text-align: center;
-    border-radius: 15px;
-    transition: all 0.35s ease-out 0s;
+    position: relative
+    width: 15rem
+    background: map-get($DASIWeb-accent, 400)
+    @include mat-elevation(2)
+    margin: 0 5vw
+    padding: 45px
+    text-align: center
+    border-radius: 15px
+    bottom: 0
+    transition: all 0.35s ease-out
 
 .card:hover
-    margin-top: -1.5vh;
+    bottom: 1rem
+    @include mat-elevation(15)
 
 .icon
-    filter: invert(1);
+    filter: invert(1)
 
 .comentaries
-    position: relative;
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-    padding: 50px 0;
+    position: relative
+    width: 100%
+    display: inline-flex
+    justify-content: center
+    padding-top: 50px
 
 .light-bold
-    font-weight: 400;
+    font-weight: 400
 
 .italic
-    font-style: italic;
+    font-style: italic
 
 @media screen and ( max-width: 700px )
     .text
-        font: 350 1.5rem Roboto;
-        line-height: 2.25rem;
+        font: 350 1.5rem Roboto
+        line-height: 5.2vh
 
     .sub-header
-        width: 70vw;
+        width: 70vw
     
     .title
-        align-self: center;
+        align-self: center
+
+    .about .title
+        margin-left: 0vw
+
+    .events .title
+        margin-left: -8vw
+
+    .intercomp .title
+        margin-left: -40vw
 
     .wrapper
-        padding: 20px 20px;
+        padding: 20px 20px
 
     .yt.wrapper
-        width: 90vw;
-        height: 300px;
+        width: 90vw
+        height: 300px
         
     .events .parallax-wrapper
-        background-size: 1110%;
-        background-position-x: -135rem;
+        background-size: 1110%
+        background-position-x: -135rem
 
     .intercomp .parallax-wrapper
-        background-size: 680% !important;
-        padding-top: 250%;
+        background-size: 400% !important
+        padding-top: 250%
 
     .info .text
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 1.5rem
 
     .card
-        width: 75vw;
-        margin-bottom: 50px;
+        width: 75vw
+        margin-bottom: 50px
 
     .card .text
-        font-size: 1.25rem;
+        font-size: 1.25rem
 
 @media screen and ( min-width: 700px ) and (max-width: 1024px)
     .events .parallax-wrapper
-        background-size: 380%;
+        background-size: 380%
 
     .intercomp .parallax-wrapper
-        background-size: 380%;
+        background-size: 380%
 
-@media screen and ( min-width: 700px )
-    .about .title
-        left: 60vw;
+// @media screen and ( min-width: 700px )
+//     .about .title
+//         left: 60vw
 
-    .events .title
-        left: 15vw;
+//     .events .title
+//         left: 15vw
 
-    .intercomp .title
-        left: 60vw;
+//     .intercomp .title
+//         left: 60vw

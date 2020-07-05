@@ -32,12 +32,22 @@ export class AppComponent {
   myScrollHandler(event) {
     const scrollHeight = event.srcElement.scrollHeight;
     const scrollTop = event.srcElement.scrollTop;
-    const scrollPerc = ((scrollHeight - scrollTop - window.outerHeight) / (scrollHeight - window.outerHeight));
-    document.getElementById('about-title').style.marginLeft = 200 - scrollPerc * 200 + 'vw';
-    document.getElementById('events-title').style.marginLeft = (200 * 0.7914) - (scrollPerc * 200) + 'vw';
-    document.getElementById('intercomp-title').style.marginLeft = (200 * 0.23) - (scrollPerc * 200) + 'vw';
-    document.getElementById('events-parallax').style.backgroundPositionY = - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
-    document.getElementById('intercomp-parallax').style.backgroundPositionY =
-    - 500 - (event.srcElement.scrollTop * this.parallaxRatio) + 'px';
+    const innerHeight = window.innerHeight;
+    const innerWidth = window.innerWidth;
+    const perc = 50 + (scrollHeight - scrollTop - innerHeight) * 50 / -(scrollHeight - innerHeight);
+
+    if (innerWidth > 700) {
+      document.getElementById('about-title').style.marginLeft = 70 - perc + 'vw';
+      document.getElementById('events-title').style.marginLeft = 7 + perc + 'vw';
+      document.getElementById('intercomp-title').style.marginLeft = 21.5 + perc + 'vw';
+      document.getElementById('events-parallax').style.backgroundPositionY = -7.5 - perc * this.parallaxRatio + 'rem';
+      document.getElementById('intercomp-parallax').style.backgroundPositionY = -76 - perc * this.parallaxRatio + 'rem';
+    } else {
+      document.getElementById('about-title').style.marginLeft = -perc + 'vw';
+      document.getElementById('events-title').style.marginLeft = -8 + perc + 'vw';
+      document.getElementById('intercomp-title').style.marginLeft = -40 + perc + 'vw';
+      document.getElementById('events-parallax').style.backgroundPositionY = -7.5 - perc * this.parallaxRatio + 'rem';
+      document.getElementById('intercomp-parallax').style.backgroundPositionY = -40 - perc * this.parallaxRatio + 'rem';
+    }
   }
 }

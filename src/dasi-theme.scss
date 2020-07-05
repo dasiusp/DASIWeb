@@ -8,5 +8,4 @@ $DASIWeb-theme: mat-light-theme($DASIWeb-primary, $DASIWeb-accent, $DASIWeb-warn
 
 @include angular-material-theme($DASIWeb-theme);
 
-html, body { height: 100%; width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
