@@ -11,7 +11,7 @@ export class AppComponent {
 
   parallaxRatio = 0.1;
 
-  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+  @ViewChild('sidenav') sidenav: MatSidenav;
 
   constructor(private snackBar: MatSnackBar) {
 
