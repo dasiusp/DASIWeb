@@ -1,4 +1,4 @@
-import { MatSnackBarRef } from '@angular/material';
+import { MatSnackBarRef } from '@angular/material/snack-bar';
 import { Component } from '@angular/core';
 
 @Component({
