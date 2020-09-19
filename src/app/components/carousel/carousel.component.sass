@@ -1,0 +1,179 @@
+@import '~@angular/material/theming'
+@import '../../../assets/variables'
+    
+/* Page */
+
+html
+    box-sizing: border-box
+
+
+*, 
+*:before, 
+*:after
+    box-sizing: inherit
+
+.container
+    width: 100%
+    margin: 0 auto
+
+
+.content
+    display: inline-flex
+    flex-direction: column
+    width: 100%
+    height: 400px !important
+    padding-bottom: 50px
+
+.photo
+    align-self: center
+    border: map-get($md-nd-dasi-pallete, 50) 2px solid
+    @include mat-elevation(3)
+    background-position: center
+    border-radius: 100%
+    background-size: 100% !important
+    width: 130px
+    height: 130px
+
+.photo.st
+    background: url('https://github.com/dasiusp/assets/blob/master/images/Larissa%20Marques.jfif?raw=true')
+
+.photo.nd
+    background: url('https://github.com/dasiusp/assets/blob/master/images/Lucas%20Pipa.jfif?raw=true')
+
+.photo.rd
+    background: url('https://github.com/dasiusp/assets/blob/master/images/Dayane%20Saura.jfif?raw=true')
+
+.photo.th
+    background: url('https://github.com/dasiusp/assets/blob/master/images/Alan%20Utsuni.jfif?raw=true')
+
+.comentary
+    position: relative
+    top: 60px
+    width: 50%
+    align-self: center
+    text-align: center
+    font-size: 1.1em
+    font-style: italic
+    font-weight: 400
+
+.position
+    align-self: center
+    position: relative
+    text-align: center
+    padding-top: 18px
+    font-weight: 500
+    color: darkgray
+    font-style: normal
+
+.position.sd
+    padding-top: 3px
+
+/* Carousel */
+
+.carousel
+    position: relative
+    overflow: hidden
+    width: 100%
+
+
+.carousel-container
+    list-style: none
+    overflow: hidden
+    padding: 0
+    margin: 0
+    width: 500%
+    transition: transform 0.3s cubic-bezier(.694, .0482, .335, 1)
+
+
+.carousel-item
+    position: relative
+    float: left
+    width: 20%
+
+
+/* Next / Prev Buttons */
+
+.carousel-prev,
+.carousel-next
+    position: absolute
+    top: 50%
+    background-color: #222
+    opacity: 0.7
+    border-radius: 50%
+    color: #fff
+    font-size: 1em
+    cursor: pointer
+    width: 40px
+    height: 40px
+    line-height: 40px
+    -webkit-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    text-align: center
+    z-index: 10
+    transition: opacity 0.3s ease
+
+
+.carousel-prev
+    left: 2%
+    margin-top: -12.5px
+
+
+.carousel-next
+    right: 2%
+    margin-top: -12.5px
+
+.carousel-next .icon, .carousel-prev .icon
+    top: 6px
+    position: relative
+
+.carousel-prev:hover,
+.carousel-next:hover
+    opacity: 1
+
+
+/* Pagination */
+
+.carousel-pagination
+    list-style: none
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 50%
+    padding: 0
+    margin: 0 auto
+    text-align: center
+    z-index: 10
+
+
+.carousel-bullet
+    display: inline-block
+    width: 12px
+    height: 12px
+    background-color: map-get($md-nd-dasi-pallete, 50)
+    cursor: pointer
+    margin: 0 7px
+    border-radius: 50%
+    opacity: 0.5
+    transition-property: transform, opacity, background-color
+    transition-duration: 0.3s
+
+
+.carousel-bullet:hover
+    -webkit-transform: scale(1.3)
+    transform: scale(1.3)
+
+
+.carousel-bullet.active-bullet, 
+.carousel-bullet.active-bullet:hover
+    opacity: 1
+    -webkit-transform: scale(1.3)
+    transform: scale(1.3)
+    background-color: map-get($md-nd-dasi-pallete, 400)
+    cursor: default
+
+@media (max-width: 700px)
+    .comentary
+        top: 40px
+        width: 100%
+        font-size: 15px

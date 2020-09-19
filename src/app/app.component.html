@@ -1,0 +1,31 @@
+<mat-sidenav-container class="fade-container" (backdropClick)="closeSidebar()">
+    <mat-sidenav class="sidenav" #sidenav (keydown.escape)="closeSidebar()" disableClose>
+        <img 
+            class="grifo-logo"
+            src="https://github.com/dasiusp/assets/blob/master/arts/grifo-logo.png?raw=true"
+            alt="Logo grifo universitário">
+        <button 
+            mat-button
+            class="first item"
+            (click)="openSnackBar()">
+            <span class="text">Login</span>
+        </button>
+        <button 
+            mat-button
+            class="item"
+            (click)="openSnackBar()">
+            <span class="text">Setores</span>
+        </button>
+        <button 
+            mat-button
+            class="item"
+            (click)="openSnackBar()">
+            <span class="text">Loja</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content appSlideTransition (scroll)="myScrollHandler($event)">
+        <app-header (toggleSidebar)="sidenav.open()"></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
