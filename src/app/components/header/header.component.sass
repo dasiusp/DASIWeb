@@ -1,6 +1,6 @@
 @import '~@angular/material/theming'
 @import '../../../assets/variables'
-    
+
 .mat-header
     position: fixed
     height: 84px
@@ -36,7 +36,8 @@
 .logo-side-title
     position: relative
     align-self: center
-    left: 35px 
+    left: 35px
+    display: none;
 
 .sign-title
     position: relative
@@ -55,9 +56,9 @@
     display: none
 
 .container-buttons
-    position: relative
-    align-self: center
-    right: -30vw
+    position: absolute;
+    align-self: center;
+    right: 0;
 
 .menu-icon
     font-size: 3rem
@@ -86,19 +87,8 @@
         visibility: visible
         display: flex
 
-@media screen and ( max-width: 1090px )
-    .container-buttons
-        right: -24vw
-
-    .item
-        margin: 0 10px
-
-@media screen and ( max-width: 820px )
-    .container-buttons
-        right: -14vw
-
-    .item
-        margin: 0 5px
+    .logo-side-title
+        display: initial;
 
 @media screen and ( max-width: 700px )
     .container-buttons
