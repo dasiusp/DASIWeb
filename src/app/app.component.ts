@@ -30,6 +30,10 @@ export class AppComponent {
     });
   }
 
+  redirectTo(url) {
+    window.location.href = url;
+  }
+
   myScrollHandler(event) {
     const scrollHeight = event.srcElement.scrollHeight;
     const scrollTop = event.srcElement.scrollTop;
