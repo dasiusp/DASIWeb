@@ -1,3 +1,38 @@
 <div class="container">
-  <app-loader></app-loader>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="searchCertificate(form.get('certificateId').value)"
+    class="certificate-form"
+  >
+    <mat-form-field class="certificate-id">
+      <mat-label>ID do certificado</mat-label>
+      <input
+        matInput
+        type="text"
+        [formControl]="form.controls['certificateId']"
+      />
+      <button
+        mat-button
+        *ngIf="form.get('certificateId').value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="form.controls['certificateId'].setValue('')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="form.controls['certificateId'].hasError('required')">
+        O id do certificado <strong>é obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-button
+      [disabled]="form.invalid"
+      type="submit"
+      matSuffix
+    >
+      Verificar certificado
+    </button>
+  </form>
+  <app-loader *ngIf="pageLoading"></app-loader>
 </div>
