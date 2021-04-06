@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePage } from './pages/home/home.page';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SectorsPage } from './pages/sectors/sectors.page';
+import { CertificatesPage } from './pages/certificates/certificates.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SectorsPage } from './pages/sectors/sectors.page';
     FooterComponent,
     HomePage,
     CarouselComponent,
-    SectorsPage
+    SectorsPage,
+    CertificatesPage,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
