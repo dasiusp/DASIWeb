@@ -1,4 +1,11 @@
 <div class="container">
+  <div class="sub-header"></div>
+  <span class="title">CERTIFICADOS</span>
+  <div class="content">
+    <p class="text wrapper">
+      Aqui você pode realizar a verificação de um certificado emitido pelo DASI! É muito fácil: com o código de identificação único do certificado, basta você digitá-lo no campo abaixo que verificaremos em nossa base se o emitimos.
+    </p>
+  </div>
   <form
     [formGroup]="form"
     (ngSubmit)="searchCertificate(form.get('certificateId').value)"
@@ -25,12 +32,7 @@
         O id do certificado <strong>é obrigatório</strong>
       </mat-error>
     </mat-form-field>
-    <button
-      mat-button
-      [disabled]="form.invalid"
-      type="submit"
-      matSuffix
-    >
+    <button mat-button [disabled]="form.invalid" type="submit" matSuffix>
       Verificar certificado
     </button>
   </form>
