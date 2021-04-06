@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { CertificatesService } from "services/certificates/certificates.service";
+import { environment } from "../../../environments/environment.prod";
 
 @Component({
   selector: "app-certificates",
@@ -9,6 +10,7 @@ import { CertificatesService } from "services/certificates/certificates.service"
   styleUrls: ["./certificates.component.sass"],
 })
 export class CertificatesPage implements OnInit {
+  recaptchaKey = environment.recaptchaKey;
   form: FormGroup;
   pageLoading = false;
 
@@ -20,6 +22,7 @@ export class CertificatesPage implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       certificateId: ["", Validators.required],
+      recaptchaReactive: [false, Validators.requiredTrue],
     });
   }
 
@@ -30,5 +33,11 @@ export class CertificatesPage implements OnInit {
       (err) => console.log(err),
       () => (this.pageLoading = false)
     );
+  }
+
+  resolved(res) {
+    if (res) {
+      this.form.controls["recaptchaReactive"].setValue(true);
+    }
   }
 }

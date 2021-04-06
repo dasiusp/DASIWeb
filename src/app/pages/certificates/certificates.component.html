@@ -3,7 +3,10 @@
   <span class="title">CERTIFICADOS</span>
   <div class="content">
     <p class="text wrapper">
-      Aqui você pode realizar a verificação de um certificado emitido pelo DASI! É muito fácil: com o código de identificação único do certificado, basta você digitá-lo no campo abaixo que verificaremos em nossa base se o emitimos.
+      Aqui você pode realizar a verificação de um certificado emitido pelo DASI!
+      É muito fácil: com o código de identificação único do certificado, basta
+      você digitá-lo no campo abaixo que verificaremos em nossa base se o
+      emitimos.
     </p>
   </div>
   <form
@@ -32,7 +35,12 @@
         O id do certificado <strong>é obrigatório</strong>
       </mat-error>
     </mat-form-field>
-    <button mat-button [disabled]="form.invalid" type="submit" matSuffix>
+    <re-captcha
+      class="recaptcha"
+      (resolved)="resolved($event)"
+      [siteKey]="recaptchaKey"
+    ></re-captcha>
+    <button mat-button class="submit-button" [disabled]="form.invalid" type="submit" matSuffix>
       Verificar certificado
     </button>
   </form>
