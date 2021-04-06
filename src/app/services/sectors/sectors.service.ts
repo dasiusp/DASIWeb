@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../../environments/environment.prod';
 
 const { apiUrl } = environment;
 
