@@ -1,0 +1,82 @@
+
+@import '../../../assets/variables'
+
+ul
+  list-style: none
+
+.container
+  position: relative
+  margin-top: 15rem
+  min-height: 100vh
+
+.sub-header, .sector-sub-header
+  align-self: flex-end
+  position: relative
+  height: 100px
+  width: 35rem
+  left: -5rem
+  background: map-get($md-st-dasi-pallete, 50)
+  @include mat-elevation(2)
+  transform: skewX(25deg)
+  border-radius: 3px
+
+.title, .sub-title
+  position: absolute
+  top: 0
+  left: 15rem
+  font: 700 3.5rem Exo
+  letter-spacing: 4px
+  color: black
+  transition: all 0.35s ease-out 0s
+
+.sector-sub-header
+  margin-top: 7.5px
+  width: 34rem
+  height: 65px
+  transform: skewX(0deg)
+  left: -5rem
+
+.sub-title
+  position: relative
+  font-size: 2rem
+  top: -60px
+  left: -50px
+
+.content
+  position: relative
+  top: -1.8rem
+  left: -5.8rem
+
+  .text
+    font: 350 1.5rem Roboto
+    line-height: 3rem
+    color: black
+    text-align: left
+
+@media screen and ( max-width: 700px )
+  .container
+    margin-top: 10rem
+
+  .sub-header
+    left: -5rem
+    width: 75vw
+
+  .sector-sub-header
+    width: 70vw
+
+  .title
+    left: 2rem
+    font-size: 3.2rem;
+
+  .sub-title
+    font-size: 1.8rem;
+
+  .text
+    font-size: 1.2rem !important;
+    line-height: 25px !important;
+
+  .content
+    top: -1.3rem;
+
+  li
+    margin-bottom: 25px;

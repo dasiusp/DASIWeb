@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { CertificatesPage } from './pages/certificates/certificates.component';
+import { HomePage } from './pages/home/home.page';
+import { SectorsPage } from './pages/sectors/sectors.page';
 
 const routes: Routes = [
-  { path: 'home', component: LandingPageComponent },
+  { path: 'home', component: HomePage },
+  { path: 'certificates', component: CertificatesPage },
+  { path: 'sectors', component: SectorsPage },
   { path: '**', redirectTo: '/home'}
 ];
 

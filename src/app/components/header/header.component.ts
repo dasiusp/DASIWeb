@@ -28,4 +28,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  redirectTo(url) {
+    window.location.href = url;
+  }
+
 }

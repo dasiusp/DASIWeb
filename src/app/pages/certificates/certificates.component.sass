@@ -1,0 +1,74 @@
+@import '~@angular/material/theming'
+@import '../../../assets/variables'
+
+.container
+  min-height: 100vh
+  display: flex
+  flex-flow: column
+
+  form
+    display: inline-flex
+    flex-flow: column
+    min-height: 7em
+    place-content: space-between
+
+    .recaptcha
+      place-self: center
+      margin-top: 2rem
+
+    .submit-button
+      height: 4rem
+      cursor: pointer
+      margin-top: 2rem
+      font-size: 20px
+
+  .sub-header
+    align-self: flex-start
+    position: relative
+    height: 100px
+    width: 60vw
+    top: 13rem
+    left: -5rem
+    margin-right: -50px
+    background: map-get($md-st-dasi-pallete, 50)
+    @include mat-elevation(2)
+    transform: skewX(25deg)
+    border-radius: 3px
+
+  .title
+    position: relative
+    font: 700 2.8rem Exo
+    letter-spacing: 4px
+    color: black
+    transition: all 0.35s ease-out 0s
+    top: 8rem
+    left: 8rem
+
+  .content
+    position: relative
+    margin-top: 8.5rem
+    padding: 1.5rem 4rem
+
+  .text
+    font: 350 1.8rem Roboto
+    line-height: 3rem
+    color: black
+    text-align: center
+
+.certificate-form
+  position: relative
+  margin: 0 auto 5rem
+
+  .certificate-id
+    width: 25rem
+
+@media screen and ( max-width: 700px )
+  .certificate-id
+    width: 90vw !important
+
+  .title
+    left: 0 !important
+    margin: 0 auto
+
+  .sub-header
+    width: 85vw !important
