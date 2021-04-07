@@ -3,12 +3,13 @@
         <img
             class="grifo-logo"
             src="https://github.com/dasiusp/assets/blob/master/arts/grifo-logo.png?raw=true"
-            alt="Logo grifo universitário">
+            alt="Logo grifo universitário"
+            routerLink="/home">
         <button
             mat-button
-            class="first item"
-            (click)="openSnackBar()">
-            <span class="text">Login</span>
+            class="item"
+            routerLink="/certificates">
+            <span class="text">Certificados</span>
         </button>
         <button
             mat-button
@@ -19,7 +20,7 @@
         <button
             mat-button
             class="item"
-            (click)="openSnackBar()">
+            (click)="redirectTo('https://www.lojadasi.com/loja')">
             <span class="text">Loja</span>
         </button>
     </mat-sidenav>
