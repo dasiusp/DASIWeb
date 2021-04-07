@@ -40,9 +40,40 @@
       (resolved)="resolved($event)"
       [siteKey]="recaptchaKey"
     ></re-captcha>
-    <button mat-button class="submit-button" [disabled]="form.invalid" type="submit" matSuffix>
+    <button
+      mat-button
+      class="submit-button"
+      [disabled]="form.invalid"
+      type="submit"
+      matSuffix
+    >
       Verificar certificado
     </button>
   </form>
 </div>
 <app-loader *ngIf="pageLoading"></app-loader>
+<app-modal *ngIf="certificate" (closeModal)="certificate = null">
+  <h2 title class="title">
+    {{
+      certificate.error
+        ? "Não encontramos o certificado"
+        : "Certificado encontrado!"
+    }}
+  </h2>
+  <div content class="text-wrapper">
+    <ul>
+      <div *ngFor="let item of certificate | keyvalue">
+        <li
+          *ngIf="item.key !== 'token'"
+          [ngStyle]="{
+            'text-align': item.key !== 'error' ? 'initial' : 'center'
+          }"
+        >
+          {{ item.key !== "error" ? handleKey(item.key) + ": " : null }}
+          {{ handleValue(item.key, item.value) }}
+          <hr *ngIf="!(certificate && certificate.error)" />
+        </li>
+      </div>
+    </ul>
+  </div>
+</app-modal>

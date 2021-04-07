@@ -1,1 +1,17 @@
-<p>modal works!</p>
+<div class="container">
+  <div class="modal">
+    <button
+      class="close-button"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="closeModal.emit()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <ng-content [select]="[title]"></ng-content>
+    <ng-content [select]="[content]"></ng-content>
+  </div>
+</div>
+<div class="overlay" (click)="closeModal.emit()">dassdsa</div>
