@@ -22,6 +22,10 @@ export class AppComponent {
     this.sidenav.close();
   }
 
+  openSidebar() {
+    this.sidenav.open();
+  }
+
   openSnackBar() {
     this.snackBar.openFromComponent(SnackbarComponent, {
       duration: 4300,

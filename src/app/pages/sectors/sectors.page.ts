@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SectorsService } from '../../services/sectors.service';
+import { SectorsService } from 'services/sectors/sectors.service';
 
 @Component({
   selector: 'app-sectors',
@@ -8,6 +8,7 @@ import { SectorsService } from '../../services/sectors.service';
 })
 export class SectorsPage implements OnInit {
   members = {};
+  pageLoading = true;
 
   constructor(private sectorsService: SectorsService) { }
 
@@ -20,10 +21,12 @@ export class SectorsPage implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pageLoading = true
     this.sectorsService.getMembers()
       .subscribe(
         (res) => this.members = res,
-        (err) => console.log(err)
+        (err) => console.log(err),
+        () => this.pageLoading = false
       );
   }
 

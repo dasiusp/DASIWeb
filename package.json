@@ -23,6 +23,7 @@
     "@angular/router": "~10.1.2",
     "acorn": "^6.4.1",
     "minimist": "^1.2.5",
+    "ng-recaptcha": "^7.0.1",
     "node-sass": "^4.14.1",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.5.4",

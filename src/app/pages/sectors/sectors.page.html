@@ -1,13 +1,11 @@
 <div class="container">
   <ul>
     <li *ngFor="let year of getYears()">
-      <div class="sub-header">
-      </div>
+      <div class="sub-header"></div>
       <span class="title">{{year}}</span>
       <ul>
         <li *ngFor="let sector of getSectors(year)">
-          <div class="sector-sub-header">
-          </div>
+          <div class="sector-sub-header"></div>
           <span class="sub-title">{{sector}}</span>
           <ul class="content">
             <li class="text" *ngFor="let member of members[year][sector]">
@@ -19,3 +17,4 @@
     </li>
   </ul>
 </div>
+<app-loader *ngIf="pageLoading"></app-loader>
