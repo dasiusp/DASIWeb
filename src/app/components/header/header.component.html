@@ -1,37 +1,35 @@
-<mat-toolbar
-class="mat-header">
-    <div id="header-container" class="container">
-        <img
-        class="grifo-logo"
-        src="https://github.com/dasiusp/assets/blob/master/arts/grifo-logo.png?raw=true"
-        alt="Logo grifo universitário"
-        routerLink="/home">
-        <div class="logo-side-title">
-            <img
-            src="https://github.com/dasiusp/assets/blob/master/arts/letreiro-logo.png?raw=true"
-            class="sign-title"
-            routerLink="/home"/>
-        </div>
-        <div class="container-buttons">
-            <button
-                mat-button
-                class="item"
-                routerLink="/certificates">
-                <span class="text">Certificados</span>
-            </button>
-            <button
-                mat-button
-                class="item"
-                routerLink="/sectors">
-                <span class="text">Setores</span>
-            </button>
-            <button
-                mat-button
-                class="item"
-                (click)="redirectTo('https://www.lojadasi.com/loja')">
-                <span class="text">Loja</span>
-            </button>
-        </div>
-        <button class="menu-button" mat-button (click)="emitToggleSidebar()"><mat-icon class="menu-icon">menu</mat-icon></button>
+<mat-toolbar class="mat-header">
+  <div id="header-container" class="container">
+    <img
+      class="grifo-logo"
+      src="https://github.com/dasiusp/assets/blob/master/arts/grifo-logo.png?raw=true"
+      alt="Logo grifo universitário"
+      routerLink="/home"
+    />
+    <div class="logo-side-title">
+      <img
+        src="https://github.com/dasiusp/assets/blob/master/arts/letreiro-logo.png?raw=true"
+        class="sign-title"
+        routerLink="/home"
+      />
     </div>
+    <div class="container-buttons">
+      <button mat-button class="item" routerLink="/certificates">
+        <span class="text">Certificados</span>
+      </button>
+      <button mat-button class="item" routerLink="/sectors">
+        <span class="text">Setores</span>
+      </button>
+      <button
+        mat-button
+        class="item"
+        (click)="redirectTo('https://www.lojadasi.com/loja')"
+      >
+        <span class="text">Loja</span>
+      </button>
+    </div>
+    <button class="menu-button" mat-button (click)="emitToggleSidebar()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>

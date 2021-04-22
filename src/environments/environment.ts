@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://southamerica-east1-dasiweb.cloudfunctions.net',
+  apiUrl: "https://southamerica-east1-dasiweb.cloudfunctions.net",
 };
 
 /*

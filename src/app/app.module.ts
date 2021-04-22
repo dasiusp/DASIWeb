@@ -15,7 +15,7 @@ import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SectorsPage } from "./pages/sectors/sectors.page";
 import { CertificatesPage } from "./pages/certificates/certificates.component";
 import { LoaderComponent } from "./components/loader/loader.component";
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from "./components/modal/modal.component";
 
 @NgModule({
   declarations: [
