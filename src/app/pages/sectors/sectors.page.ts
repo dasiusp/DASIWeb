@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { SectorsService } from 'services/sectors/sectors.service';
+import { Component, OnInit } from "@angular/core";
+import { SectorsService } from "services/sectors/sectors.service";
 
 @Component({
-  selector: 'app-sectors',
-  templateUrl: './sectors.page.html',
-  styleUrls: ['./sectors.page.sass']
+  selector: "app-sectors",
+  templateUrl: "./sectors.page.html",
+  styleUrls: ["./sectors.page.sass"],
 })
 export class SectorsPage implements OnInit {
   members = {};
   pageLoading = true;
 
-  constructor(private sectorsService: SectorsService) { }
+  constructor(private sectorsService: SectorsService) {}
 
   getYears() {
     return Object.keys(this.members);
@@ -21,13 +21,11 @@ export class SectorsPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pageLoading = true
-    this.sectorsService.getMembers()
-      .subscribe(
-        (res) => this.members = res,
-        (err) => console.log(err),
-        () => this.pageLoading = false
-      );
+    this.pageLoading = true;
+    this.sectorsService.getMembers().subscribe(
+      (res) => (this.members = res),
+      (err) => console.log(err),
+      () => (this.pageLoading = false)
+    );
   }
-
 }

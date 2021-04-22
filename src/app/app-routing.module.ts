@@ -1,19 +1,25 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
+<<<<<<< Updated upstream
 import { CertificatesPage } from './pages/certificates/certificates.component';
 import { HomePage } from './pages/home/home.page';
 import { SectorsPage } from './pages/sectors/sectors.page';
+=======
+import { CertificatesPage } from "./pages/certificates/certificates.page";
+import { HomePage } from "./pages/home/home.page";
+import { SectorsPage } from "./pages/sectors/sectors.page";
+>>>>>>> Stashed changes
 
 const routes: Routes = [
-  { path: 'home', component: HomePage },
-  { path: 'certificates', component: CertificatesPage },
-  { path: 'sectors', component: SectorsPage },
-  { path: '**', redirectTo: '/home'}
+  { path: "home", component: HomePage },
+  { path: "certificates", component: CertificatesPage },
+  { path: "sectors", component: SectorsPage },
+  { path: "**", redirectTo: "/home" },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

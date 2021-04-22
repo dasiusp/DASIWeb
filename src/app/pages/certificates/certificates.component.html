@@ -54,11 +54,8 @@
 <app-loader *ngIf="pageLoading"></app-loader>
 <app-modal *ngIf="certificate" (closeModal)="certificate = null">
   <h2 title class="title">
-    {{
-      certificate.error
-        ? "Não encontramos o certificado"
-        : "Certificado encontrado!"
-    }}
+    {{ certificate.error ? "Não encontramos o certificado" : "Certificado
+    encontrado!" }}
   </h2>
   <div content class="text-wrapper">
     <ul>
@@ -69,8 +66,8 @@
             'text-align': item.key !== 'error' ? 'initial' : 'center'
           }"
         >
-          {{ item.key !== "error" ? handleKey(item.key) + ": " : null }}
-          {{ handleValue(item.key, item.value) }}
+          {{ item.key !== "error" ? handleKey(item.key) + ": " : null }} {{
+          handleValue(item.key, item.value) }}
           <hr *ngIf="!(certificate && certificate.error)" />
         </li>
       </div>

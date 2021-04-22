@@ -62,19 +62,19 @@ export class CertificatesPage implements OnInit {
     this.certificatesService.getCertificate(value).subscribe(
       (res) => {
         if (!res) {
-          return this.certificate = {
+          return (this.certificate = {
             error:
               "Não encontramos o certificado informado. Confirme se o ID digitado está correto e tente novamente.",
-          }
+          });
         }
 
         this.certificate = res;
       },
       () =>
-        this.certificate = {
+        (this.certificate = {
           error:
             "Não conseguimos buscar o certificado. Tente novamente mais tarde.",
-        },
+        }),
       () => (this.pageLoading = false)
     );
   }

@@ -1,11 +1,17 @@
-
-@import '~@angular/material/theming';
-@import '../src/assets/variables.sass';
+@import "~@angular/material/theming";
+@import "../src/assets/variables.sass";
 
 @include mat-core();
 
-$DASIWeb-theme: mat-light-theme($DASIWeb-primary, $DASIWeb-accent, $DASIWeb-warn);
+$DASIWeb-theme: mat-light-theme(
+  $DASIWeb-primary,
+  $DASIWeb-accent,
+  $DASIWeb-warn
+);
 
 @include angular-material-theme($DASIWeb-theme);
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
