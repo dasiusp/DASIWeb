@@ -1,15 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-<<<<<<< Updated upstream
-import { CertificatesPage } from './pages/certificates/certificates.component';
-import { HomePage } from './pages/home/home.page';
-import { SectorsPage } from './pages/sectors/sectors.page';
-=======
 import { CertificatesPage } from "./pages/certificates/certificates.page";
 import { HomePage } from "./pages/home/home.page";
 import { SectorsPage } from "./pages/sectors/sectors.page";
->>>>>>> Stashed changes
 
 const routes: Routes = [
   { path: "home", component: HomePage },

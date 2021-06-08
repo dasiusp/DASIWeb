@@ -6,8 +6,8 @@ import { environment } from "../../../environments/environment.prod";
 
 @Component({
   selector: "app-certificates",
-  templateUrl: "./certificates.component.html",
-  styleUrls: ["./certificates.component.sass"],
+  templateUrl: "./certificates.page.html",
+  styleUrls: ["./certificates.page.sass"],
 })
 export class CertificatesPage implements OnInit {
   recaptchaKey = environment.recaptchaKey;
