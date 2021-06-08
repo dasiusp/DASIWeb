@@ -13,6 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: install Angular
+      run: |
+        npm install -g @angular/cli
+        npm install -g ngh
+
     - name: build
       run: ng build --prod --base-href https://dasiusp.com/
 
