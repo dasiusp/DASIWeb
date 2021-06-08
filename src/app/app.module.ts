@@ -13,7 +13,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HomePage } from "./pages/home/home.page";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SectorsPage } from "./pages/sectors/sectors.page";
-import { CertificatesPage } from "./pages/certificates/certificates.component";
+import { CertificatesPage } from "./pages/certificates/certificates.page";
 import { LoaderComponent } from "./components/loader/loader.component";
 import { ModalComponent } from "./components/modal/modal.component";
 
