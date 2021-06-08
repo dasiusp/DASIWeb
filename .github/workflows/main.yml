@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+name: Continuous delivery of official DASI website
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/Checkout@v2
+
+    - name: build
+      run: ng build --prod --base-href https://dasiusp.com/
+
+    - name: deploy
+      run: ngh --dir=dist/DASIWeb
