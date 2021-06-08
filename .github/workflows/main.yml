@@ -1,7 +1,10 @@
 on:
-  push:
+  pull-request:
+    types: [ closed ]
     branches:
       - master
+      - main
+
 name: Continuous delivery of official DASI website
 jobs:
   build-and-deploy:
@@ -9,7 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: install dependencies
+    # - name: install dependencies
+    #   run: |
+
 
     - name: build
       run: ng build --prod --base-href https://dasiusp.com/
