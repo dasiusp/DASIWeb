@@ -26,3 +26,6 @@ jobs:
 
       - name: deploy
         run: ngh --dir=dist/DASIWeb --token ${{ secrets.NGH_ACCESS_TOKEN }}
+
+        with:
+          repo-token: ${{ secrets.NGH_ACCESS_TOKEN }}
