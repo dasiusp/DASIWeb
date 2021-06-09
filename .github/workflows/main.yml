@@ -15,9 +15,11 @@ jobs:
     - uses: actions/setup-node@v1 #this will install Node and npm on Ubuntu
       with:
         node-version: '14.15'
-    - run: npm install
-    - run: npm install -g @angular/cli > /dev/null
-    - run: npm install -g ngh
+    - name: install dependecies
+        run: |
+          npm install
+          npm install -g @angular/cli > /dev/null
+          npm install -g ngh
 
     - name: build
       run: ng build --prod --base-href https://dasiusp.com/
