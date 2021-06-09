@@ -24,5 +24,7 @@ jobs:
       - name: build
         run: ng build --prod --base-href https://dasiusp.com/
 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: deploy
-        run: ngh --dir=dist/DASIWeb --token=${{ secrets.NGH_ACCESS_TOKEN }}
+        run: ngh --dir=dist/DASIWeb
