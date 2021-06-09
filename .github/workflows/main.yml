@@ -25,4 +25,4 @@ jobs:
         run: ng build --prod --base-href https://dasiusp.com/
 
       - name: deploy
-        run: ngh --dir=dist/DASIWeb
+        run: ngh --dir=dist/DASIWeb --token ${{ secrets.NGH_ACCESS_TOKEN }}
