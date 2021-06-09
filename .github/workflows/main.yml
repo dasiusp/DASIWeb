@@ -11,19 +11,18 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1 #this will install Node and npm on Ubuntu
-      with:
-        node-version: '14.15'
-    - name: install dependecies
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.15'
+      - name: install dependecies
         run: |
           npm install
           npm install -g @angular/cli > /dev/null
           npm install -g ngh
 
-    - name: build
-      run: ng build --prod --base-href https://dasiusp.com/
+      - name: build
+        run: ng build --prod --base-href https://dasiusp.com/
 
-    - name: deploy
-      run: ngh --dir=dist/DASIWeb
-
+      - name: deploy
+        run: ngh --dir=dist/DASIWeb
