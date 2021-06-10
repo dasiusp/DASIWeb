@@ -12,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          repository: dasiusp/DASIWeb
-          token: ${{ secrets.NGH_ACCESS_TOKEN }}
-          path: ./
       - uses: actions/setup-node@v1
         with:
           node-version: '14.15'
@@ -23,10 +19,15 @@ jobs:
         run: |
           npm install
           npm install -g @angular/cli > /dev/null
-          npm install -g ngh
 
       - name: build
         run: ng build --prod --base-href https://dasiusp.com/
 
       - name: deploy
-        run: ngh --dir=dist/DASIWeb --token ${{ secrets.NGH_ACCESS_TOKEN }}
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@1.3.2
+        with:
+          github_access_token: ${{ secrets.NGH_ACCESS_TOKEN }}
+          build_configuration: production
+          base_href: https://dasiusp.com/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/DASIWeb
