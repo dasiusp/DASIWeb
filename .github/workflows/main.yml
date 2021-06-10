@@ -15,15 +15,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14.15'
-      - name: install dependecies
-        run: |
-          npm install
-          npm install -g @angular/cli > /dev/null
 
-      - name: build
-        run: ng build --prod --base-href https://dasiusp.com/
-
-      - name: deploy
+      - name: install dependecies, build and deploy
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           github_access_token: ${{ secrets.NGH_ACCESS_TOKEN }}
