@@ -1,7 +1,4 @@
 # DASIWeb
-<<<<<<< Updated upstream
-Repositório do website do Diretório Acadêmico de Sistemas de Informação (DASI)
-=======
 Website do Diretório Acadêmico de Sistemas de Informação (DASI)
 
 ## Código fonte
@@ -43,4 +40,3 @@ ngh --dir=dist/DASIWeb
 ```
 ### Observações importantes
 As vezes a configuração do GitHub Pages dentro da organização do DASI retorna à configuração default. Portanto alguams vezes após realizar o deploy é necessário ir a página https://github.com/dasiusp/DASIWeb/settings e na seção `GitHub Pages` definir o `custom domain` como 'https://dasiusp.com/' para manter o certificado SSL e o uso correto do domínio.
->>>>>>> Stashed changes
