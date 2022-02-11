@@ -24,7 +24,7 @@
     "acorn": "^6.4.1",
     "minimist": "^1.2.5",
     "ng-recaptcha": "^7.0.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.5.4",
     "tslib": "^2.0.0",
