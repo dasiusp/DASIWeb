@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~10.1.2",
     "@angular/router": "~10.1.2",
     "acorn": "^6.4.1",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "ng-recaptcha": "^7.0.1",
     "node-sass": "^4.14.1",
     "rxjs": "^6.6.3",
